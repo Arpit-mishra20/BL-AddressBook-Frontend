@@ -1,0 +1,33 @@
+<div class="card mt-4">
+    <div class="card-header bg-primary text-white">
+      <h3>Contact List</h3>
+    </div>
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let contact of contacts; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ contact.name }}</td>
+            <td>{{ contact.phone }}</td>
+            <td>{{ contact.email }}</td>
+            <td>{{ contact.address }}</td>
+            <td>
+              <button class="btn btn-warning btn-sm me-2" (click)="editContact(i)">Edit</button>
+              <button class="btn btn-danger btn-sm" (click)="deleteContact(i)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
